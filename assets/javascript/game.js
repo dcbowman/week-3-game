@@ -1,74 +1,40 @@
 <script type = "text/javascript">
 
-words = ();
-words.list = [];
+document.write(Please select a letter to play);
 
-words.list[0] = "dundie";
-words.list[1] = "scrantonicity";
-words.list[2] = "schrute farms";
-words.list[3] = "threat level midnight";
-words.list[4] = "here comes trebel";
-words.list[5] = "prision mike";
-words.list[6] = "thats what she said";
-words.list[7] = "worlds best boss";
+var userGuess = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-Main = {};
-Main.WordArray = [];
-Main.WordUArray = [];
+var words = ["dundie", "scrantonicity", "schrute farms", "threat level midnight",
+"here comes trebel", "prision mike", "thats what she said", "worlds best boss"];
 
-Main.lives = 4;
-Main.NumInWordBank = words.length;
+var wins = 0
+var currentword =
+var guessesleft = 6
+var lettersguessed =
 
-Main.Word = "test";
-Main.WordU = "";
+//users keys answer to start game
+document.onkeyup = function(event
+	)
+{ 
 
-Main.PullWord = function{}{
- Main.Word= words.list[(Math.floor(Math.random()*Main.NumInWordBank))];
-}
+//Generate a random word
+var randomWord = words[Math.floor(Math.random()*words.length)]
+document.write(randomDay);
 
-Main.Setunderline = function (){
-	Main.Pullword();
-	for(i=0; i<Main.Word.length; i++){
-		Main.WordArray[i] = Main.Word.charAt(i);
-		Main.WordUArray[i] = "_";
-	}
-	Main.WordU = Main.WordUArray.join("");
-	document.getElementById("WORD").innerHTML = Main.WordU;
-	document.getElementById("numletters").innerHTML = Main.Word.length;
-}
+//letters are shown as underlines
+document.write(randomWord.fill("-");
 
-Main.Updateletter = function(letter){
-	Main.Changes = 0;
-	for(i=0; i<Main.Word.length; i++){
-		Main.WordArray[i] = Main.Word.charAt(i);
-		if(Main.Word.charAt(i) == letter){
-		Main.WordUArray(i) == letter;
-		Main.Changes ++1;
+//compare users guess to the random word
+function compare (userGuess, randomWord) {
+{
+  var  = {};
+  for(var i=0;i<words.length;i++)
+  {
 
-		}
-	}
-	if(Main.Changes < 1);
-		Main.Lives -=1;
-		document.getElementById("lives").innerHTML = Main.Lives;
-	}
+//if the users guess is in the word, show letter, if not put letter
+//under the letter guessed and reduce guesses left
 
-	Main.WordU = Main.WordUArray.join("");
-	document.getElementById("WORD"). innerHTML = Main.WordU;
+//once word is complete increase wins ++ 
 
-	Main.Word1 = Main.WordArray.join("");
-	Main.Word2 = Main.WordUArray.join("");
-
-	if(Main.Word1 == Main.Word2){
-		alert("Congratulations! You've won a Dundie!");
-		window.location.reload();
-	}
-
-	if (Main.Lives < 1){
-		document.getElementById("WORD").innerHTML == MainWord1;
-		alert("You're fired. Please try again")
-	} 
-
-}
-
-Main.Pullword();
-Main.Setunderline();
+//start game over

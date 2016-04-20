@@ -1,0 +1,11 @@
+body{
+	font-size:15px;
+	line-height:34px;
+	background:url("../images/notebookpaper.jpeg");
+}
+h1{
+	text-align: center;
+	color: red;
+	font-weight: 700;
+	font-size: 200px;
+}
